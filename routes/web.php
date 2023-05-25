@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BooksController;
+use App\Http\Controllers\CategoriesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,8 +15,4 @@ use App\Http\Controllers\BooksController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/book', [BooksController::class, 'viewBook'])->name('book');
+Route::get('/', [BooksController::class, 'viewBook'])->name('welcome');

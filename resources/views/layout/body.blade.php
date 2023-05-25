@@ -24,8 +24,8 @@
     @vite(['resources/js/app.js'])
 
     <body class="">
-        @include('layout\navbar')
+        @include('layout.navbar')
         @yield('content')
-        @include('layout\footer')
+        @include('layout.footer')
     </body>
 </html>

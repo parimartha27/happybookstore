@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Book;
+use App\Models\Category;
 use Illuminate\Pagination\Paginator;
+
 
 class BooksController extends Controller
 {
@@ -14,6 +16,8 @@ class BooksController extends Controller
             ->paginate(10); // Menggunakan metode paginate() untuk membagi data menjadi halaman-halaman
 
         Paginator::useBootstrap();
-        return view('book', ['books' => $book]);
+        $categories = Category::all();
+        
+        return view('book', ['books' => $book, 'categories'=>$categories]);
     }
 }
